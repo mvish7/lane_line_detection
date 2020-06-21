@@ -9,7 +9,9 @@ My pipeline consisted of 5 steps:
 1. Convert the image to grayscale and apply a Gaussian blur.  For the parameters, I used `kernel_size = (5, 5)`.
 ![alt text](./output_images/Figure_2.png?raw=true)
 
-2. Apply Canny edge detection.  In line with the recommended 3:1 ratio of thresholds, I used `low_threshold = 40` and `  high_threshold = 120`.
+2. Apply Canny edge detection.  In line with the recommended 3:1 ratio of thresholds, I used `low_threshold = 40` 
+and `  high_threshold = 120`.
+
 ![alt text](./output_images/Figure_3.png?raw=true)
 
 3. Apply a mask to the image outputted by Canny image detection.  I applied a simple mask of trapezoid shape. 
