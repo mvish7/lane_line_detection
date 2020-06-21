@@ -7,18 +7,18 @@ This project is based on Udacity's Self Driving car Nanodegree
 My pipeline consisted of 5 steps:
 
 1. Convert the image to grayscale and apply a Gaussian blur.  For the parameters, I used `kernel_size = (5, 5)`.
-![step1](./output_images/figure_2.png "Step 1: Apply Gaussian blur")
+![step1](output_images/figure_2.png "Step 1: Apply Gaussian blur")
 
 2. Apply Canny edge detection.  In line with the recommended 3:1 ratio of thresholds, I used `low_threshold = 40` and `  high_threshold = 120`.
-![step2](./output_images/figure_3.png "Step 2: Apply Canny edge detection")
+![step2](output_images/figure_3.png "Step 2: Apply Canny edge detection")
 
 3. Apply a mask to the image outputted by Canny image detection.  I applied a simple mask of trapezoid shape. 
-![step3](./output_images/figure_4.png.png "Step 3: Apply a mask")
+![step3](output_images/figure_4.png.png "Step 3: Apply a mask")
 
 4. Apply the Hough Transform to the masked image from step 3. 
 
 5. Process and filter the lines found by the Hough Transform.
-![step5](./output_images/figure_5.png "Step 5: Filter, process, and select edges")
+![step5](output_images/figure_5.png "Step 5: Filter, process, and select edges")
 
 Steps 4 and 5 were performed in an iterative fashion. The Hough Transform parameters were initialized. Since the output of the Hough Transform is a potential candidates  named `lines`, I extended these lines to the top and bottom of the masked image region. The lines were also sorted as per their length. I created a virtual zone for acceptable *x* coordinates of the endpoints of the line, and I removed entries in the `lines` list whose endpoints fell outside these intervals.  I declared the longest line in `lines` to be one of the two lane lines, and for the other I took the longest remaining line whose slope was of the opposite sign as that of `lines[0]`.
 
