@@ -2,12 +2,12 @@
 
 This project is based on Udacity's Self Driving car Nanodegree
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Describe your pipeline. As part of the description.
 
 My pipeline consisted of 5 steps:
 
 1. Convert the image to grayscale and apply a Gaussian blur.  For the parameters, I used `kernel_size = (5, 5)`.
-![alt text](./output_images/figure_2.png?raw=true)
+![alt text](./output_images/Figure_2.png?raw=true)
 
 2. Apply Canny edge detection.  In line with the recommended 3:1 ratio of thresholds, I used `low_threshold = 40` and `  high_threshold = 120`.
 ![step2](output_images/figure_3.png "Step 2: Apply Canny edge detection")
